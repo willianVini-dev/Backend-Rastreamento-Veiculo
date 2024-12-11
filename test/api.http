@@ -1,0 +1,29 @@
+GET  http://localhost:3000/places?text=av arapongas, arapongas  1000
+
+###
+GET  http://localhost:3000/places?text=rua gaturamo dourado, arapongas 372 
+
+
+###
+@originId=EjtBdi4gQXJhcG9uZ2FzLCAxMDAwIC0gQ2VudHJvLCBBcmFwb25nYXMgLSBQUiwgODY3MDEsIEJyYXNpbCIxEi8KFAoSCT1K2vHmo-yUEUsMbCigJ0YlEOgHKhQKEgltqm7n5qPslBHgY6utTjLpgw
+@destinationId=ChIJCUIvT5aj7JQRiRrQjAhZgvg
+###
+
+GET  http://localhost:3000/directions?originId={{ originId }}&destinationId={{ destinationId }}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+  "name": "rota 1",
+  "source_id": "{{ originId }}",
+  "destination_id": "{{ destinationId }}"
+}
+
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/6758f064c7197c3d63d7123c
